@@ -1,5 +1,3 @@
-import Program from './Program';
-
 
 class TuringMachine {
 
@@ -7,6 +5,7 @@ class TuringMachine {
         this.tape = ['#','#'];
         this.position = 0;
         this.state = 0;
+        this.input = null;
     }
 
     resetTape() {
@@ -16,7 +15,9 @@ class TuringMachine {
     }
 
     setInput(input) {
+        this.resetTape();
         let index = this.position;
+        this.input = input;
         for (let i=0; i<input.length; i++) {
             this.tape[index + i + 1] = input.charAt(i);
         }
@@ -31,7 +32,7 @@ class TuringMachine {
             else 
                 output += this.tape[i];
         }
-        return output + '  s = ' + this.state;
+        return output;
     }
 
     step(program) {

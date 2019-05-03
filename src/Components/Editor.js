@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUndoAlt, faArrowLeft, faArrowRight, faPlay, faFastForward } from '@fortawesome/free-solid-svg-icons';
 import { Controlled as CodeMirror} from 'react-codemirror2';
 import { defaultCode } from '../Extras/default-code'
+
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/xq-light.css';
 import '../Custom-mode/tm-custom.js';
@@ -17,8 +18,17 @@ class Editor extends Component {
     }
 
     updateCode = async (editor, data, code) => {
+        const { program, updateProgram } = this.props;
         this.setState({code});
+        program.load(code);
+        updateProgram();
     }
+
+    // simulationStep = async () => {
+    //     const {TM, program} = this.state;
+    //     console.log(TM.step(program));
+    //     this.setState(TM);
+    // }
 
     render() {
         return (

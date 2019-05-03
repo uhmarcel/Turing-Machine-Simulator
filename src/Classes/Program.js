@@ -29,7 +29,6 @@ class Program {
         fastNotation = /^q([0-9]+)\]([lr])(\(.\/.,q-?[0-9]+\))*(#.*)?$/;
         subNotationG = /\((.)\/(.),q(-?[0-9]+)\)/g; // (n/m,q)
         subNotation = /\((.)\/(.),q(-?[0-9]+)\)/; // (n/m,q)
-        shortcut = /\((.),q(-?[0-9]+)\)/; // (#,q) -> (#/#,q)
 
         this.clear();
 
