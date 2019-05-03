@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/Turing-Machine-Simulator/static/css/main.2981d506.chunk.css",
-    "main.js": "/Turing-Machine-Simulator/static/js/main.6fff876f.chunk.js",
-    "main.js.map": "/Turing-Machine-Simulator/static/js/main.6fff876f.chunk.js.map",
+    "main.css": "/Turing-Machine-Simulator/static/css/main.0aeab80c.chunk.css",
+    "main.js": "/Turing-Machine-Simulator/static/js/main.bd4431f0.chunk.js",
+    "main.js.map": "/Turing-Machine-Simulator/static/js/main.bd4431f0.chunk.js.map",
     "runtime~main.js": "/Turing-Machine-Simulator/static/js/runtime~main.66d7b9c5.js",
     "runtime~main.js.map": "/Turing-Machine-Simulator/static/js/runtime~main.66d7b9c5.js.map",
-    "static/js/2.7175f3dc.chunk.js": "/Turing-Machine-Simulator/static/js/2.7175f3dc.chunk.js",
-    "static/js/2.7175f3dc.chunk.js.map": "/Turing-Machine-Simulator/static/js/2.7175f3dc.chunk.js.map",
+    "static/css/2.5b59f2fb.chunk.css": "/Turing-Machine-Simulator/static/css/2.5b59f2fb.chunk.css",
+    "static/js/2.eb0d80f0.chunk.js": "/Turing-Machine-Simulator/static/js/2.eb0d80f0.chunk.js",
+    "static/js/2.eb0d80f0.chunk.js.map": "/Turing-Machine-Simulator/static/js/2.eb0d80f0.chunk.js.map",
     "index.html": "/Turing-Machine-Simulator/index.html",
-    "precache-manifest.021c083b749f3abeeca64552ec117ada.js": "/Turing-Machine-Simulator/precache-manifest.021c083b749f3abeeca64552ec117ada.js",
+    "precache-manifest.cf70cde496982b570f5e14923cae7737.js": "/Turing-Machine-Simulator/precache-manifest.cf70cde496982b570f5e14923cae7737.js",
     "service-worker.js": "/Turing-Machine-Simulator/service-worker.js",
-    "static/css/main.2981d506.chunk.css.map": "/Turing-Machine-Simulator/static/css/main.2981d506.chunk.css.map"
+    "static/css/2.5b59f2fb.chunk.css.map": "/Turing-Machine-Simulator/static/css/2.5b59f2fb.chunk.css.map",
+    "static/css/main.0aeab80c.chunk.css.map": "/Turing-Machine-Simulator/static/css/main.0aeab80c.chunk.css.map"
   }
 }
