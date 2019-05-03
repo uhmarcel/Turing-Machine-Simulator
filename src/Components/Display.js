@@ -5,8 +5,7 @@ const styles = {
     height: '90px',
     background: '#90a4be',
     color: '#111',
-    font: '10px',
-    fontWeight: '500',
+    font: '10px'
 }
 
 const displayArea = {
@@ -26,8 +25,8 @@ class Display extends Component {
         return (
             <Container fluid style={styles} className='d-flex align-items-center' >
                 <div className='w-100'>
-                    <h6>Turing Machine</h6>
-                    <Input type='text' name='tmDisplay' spellcheck='false' className='w-100 mt-0' style={displayArea} defaultValue='#10101001#11#'/>
+                    <h6>Turing Machine Simulator</h6>
+                    <Input type='text' name='tmDisplay' spellCheck='false' className='w-100 mt-0' style={displayArea} defaultValue='#10101001#11#'/>
                     <span className='container' style={outputText}>Output: 11101</span>
                 </div>
             </Container>

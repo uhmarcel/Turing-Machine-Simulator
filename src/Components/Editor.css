@@ -1,0 +1,26 @@
+.CodeMirror {
+    height: calc(100vh - 145px);
+    overflow-y: scroll;
+}
+
+.Editor {
+    height: calc(100vh - 90px)
+}
+
+.EditorButton {
+    padding: 2px 6px;
+    border-radius: 50%;
+    color: #667;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 1px;
+}
+
+.EditorPanel {
+    height: 40px;
+    padding-top: 6px;
+    padding-bottom: 3px;
+}
+
+/* 12px Consolas */
+
