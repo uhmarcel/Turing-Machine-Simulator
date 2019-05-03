@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Input, Label, FormGroup, FormText } from 'reactstrap';
+import { Container, Input } from 'reactstrap';
 
 const styles = {
     height: '90px',
