@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUndoAlt, faArrowLeft, faArrowRight, faPlay, faFastForward } from '@fortawesome/free-solid-svg-icons';
+import { faUndoAlt, faArrowLeft, faArrowRight, faPlay, faPause, faFastForward } from '@fortawesome/free-solid-svg-icons';
 
 import '../Css/Control.css';
 
@@ -49,9 +49,18 @@ class Control extends Component {
         updateTM();
     }
 
+    getPlayIcon = () => {
+        const {play} = this.state;
+        return play ? faPause : faPlay;
+    }
 
+    getPlayStyle = () => {
+        const {play} = this.state;
+        return play ? {} : {paddingLeft:'8px'};
+    }
 
     render() {
+        const playIcon = this.getPlayIcon();
         return (
             <div className='container-fluid ControlPanel'>
                 <span>Editor</span>
@@ -59,12 +68,14 @@ class Control extends Component {
                     <Button color='light' className='ControlButton' onClick={this.simulationReset}><FontAwesomeIcon icon={faUndoAlt}/></Button>{'  '}
                     <Button color='light' className='ControlButton'><FontAwesomeIcon icon={faArrowLeft}/></Button>{'  '}
                     <Button color='light' className='ControlButton' onClick={this.simulationStep}><FontAwesomeIcon icon={faArrowRight}/></Button>{'  '}
-                    <Button color='light' className='ControlButton' onClick={this.simulationPlay} style={{paddingLeft:'8px'}}><FontAwesomeIcon icon={faPlay} style={{height: '15px'}}/></Button>{'  '}
+                    <Button color='light' className='ControlButton' onClick={this.simulationPlay} style={this.getPlayStyle()}><FontAwesomeIcon icon={playIcon} style={{height: '16px'}}/></Button>{'  '}
                     <Button color='light' className='ControlButton' onClick={this.simulationFastforward}><FontAwesomeIcon icon={faFastForward}/></Button>    
                 </div>
             </div>
         );
     }
+
+    
 
 }
 
