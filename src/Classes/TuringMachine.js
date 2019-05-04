@@ -78,6 +78,10 @@ class TuringMachine {
         return output; // + '  <q' + this.state + '>';
     }
 
+    getState() {
+        return this.state;
+    }
+
 }
 
 export default TuringMachine;

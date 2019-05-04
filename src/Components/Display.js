@@ -1,25 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Input } from 'reactstrap';
+import { Container, Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
+import '../Css/Display.css';
 
-const styles = {
-    height: '90px',
-    background: '#7f93ad',
-    color: '#111',
-    font: '10px'
-}
 
-const displayArea = {
-    font: '14px Consolas',
-    letterSpacing: '2px',
-    height: '27px',
-    border: 'none',
-    color: '#111',
-    fontWeight: 'bold'
-}
-
-const outputText = {
-    font: '12px monospace'
-}
 
 
 class Display extends Component {
@@ -63,22 +46,27 @@ class Display extends Component {
 
     render() {
         const {displayValue} = this.state;
+        const {TM} = this.props;
         return (
-            <Container fluid style={styles} className='d-flex align-items-center' >
+            <Container fluid className='d-flex align-items-center Display' >
                 <div className='w-100'>
                     <h6>Turing Machine Simulation</h6>
-                    <Input 
-                        type='text' 
-                        name='tmDisplay' 
-                        spellCheck='false' 
-                        className='w-100 mt-0' 
-                        style={displayArea} 
-                        value={displayValue}
-                        onFocus={this.setFocusOn}
-                        onChange={this.updateInput}
-                        onBlur={this.processInput}
-                    />
-                    <span style={outputText}>Output: 11101</span>
+                    <InputGroup size='sm'>
+                        <Input 
+                            type='text' 
+                            name='tmDisplay' 
+                            spellCheck='false' 
+                            className='DisplayArea'
+                            value={displayValue}
+                            onFocus={this.setFocusOn}
+                            onChange={this.updateInput}
+                            onBlur={this.processInput}
+                        />
+                        <InputGroupAddon addonType="append">
+                            <InputGroupText style={{border:'none'}}>{'q' + TM.getState()}</InputGroupText>
+                        </InputGroupAddon>  
+                    </InputGroup>
+                    <span className='OutputText'>Output: 11101</span>
                 </div>
             </Container>
         );

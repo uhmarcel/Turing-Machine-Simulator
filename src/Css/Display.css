@@ -1,0 +1,19 @@
+
+.Display {
+    height: 90px;
+    background: #7f93ad;
+    color: #131313;
+}
+
+.DisplayArea {
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #000;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+}
+
+.OutputText {
+    font: 12px monospace;
+}
