@@ -26,7 +26,6 @@ class TuringMachine {
 
     step(program) {
         if (this.isDone()) {
-            console.log('stop')
             return;
         }
         if (this.position === this.tape.length - 1) 

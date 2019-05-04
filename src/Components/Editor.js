@@ -32,7 +32,7 @@ class Editor extends Component {
 
     render() {
         return (
-            <div style={{height:'calc(100% - 55px'}}>
+            <div style={{height:'calc(100% - 200px'}}>
                 <CodeMirror 
                     value={this.state.code} 
                     onBeforeChange={this.handleChange}

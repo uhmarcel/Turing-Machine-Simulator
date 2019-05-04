@@ -68,7 +68,7 @@ class Control extends Component {
                     <Button color='light' className='ControlButton' onClick={this.simulationReset}><FontAwesomeIcon icon={faUndoAlt}/></Button>{'  '}
                     <Button color='light' className='ControlButton'><FontAwesomeIcon icon={faArrowLeft}/></Button>{'  '}
                     <Button color='light' className='ControlButton' onClick={this.simulationStep}><FontAwesomeIcon icon={faArrowRight}/></Button>{'  '}
-                    <Button color='light' className='ControlButton' onClick={this.simulationPlay} style={this.getPlayStyle()}><FontAwesomeIcon icon={playIcon} style={{height: '16px'}}/></Button>{'  '}
+                    <Button color='light' className='ControlButton' onClick={this.simulationPlay} style={this.getPlayStyle()}><FontAwesomeIcon icon={playIcon} style={{height: '15px'}}/></Button>{'  '}
                     <Button color='light' className='ControlButton' onClick={this.simulationFastforward}><FontAwesomeIcon icon={faFastForward}/></Button>    
                 </div>
             </div>

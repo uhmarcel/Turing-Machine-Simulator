@@ -3,16 +3,18 @@ import { Container, Input } from 'reactstrap';
 
 const styles = {
     height: '90px',
-    background: '#90a4be',
+    background: '#7f93ad',
     color: '#111',
     font: '10px'
 }
 
 const displayArea = {
-    font: '14px monospace',
-    letterSpacing: '1px',
-    height: '28px',
-    border: 'none'
+    font: '14px Consolas',
+    letterSpacing: '2px',
+    height: '27px',
+    border: 'none',
+    color: '#111',
+    fontWeight: 'bold'
 }
 
 const outputText = {
@@ -64,7 +66,7 @@ class Display extends Component {
         return (
             <Container fluid style={styles} className='d-flex align-items-center' >
                 <div className='w-100'>
-                    <h6>Turing Machine Simulator</h6>
+                    <h6>Turing Machine Simulation</h6>
                     <Input 
                         type='text' 
                         name='tmDisplay' 
@@ -76,7 +78,7 @@ class Display extends Component {
                         onChange={this.updateInput}
                         onBlur={this.processInput}
                     />
-                    <span className='container' style={outputText}>Output: 11101</span>
+                    <span style={outputText}>Output: 11101</span>
                 </div>
             </Container>
         );
