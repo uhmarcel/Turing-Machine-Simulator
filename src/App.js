@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Display from './Components/Display';
+import Control from './Components/Control';
 import Editor from './Components/Editor';
-import './App.css'
+import './Css/App.css'
 
 import Program from './Classes/Program';
 import TuringMachine from './Classes/TuringMachine';
@@ -35,9 +36,12 @@ class App extends Component {
       <div className='App'>
         <Display 
           TM={TM}
+          updateTM={this.updateTM} 
+        />
+        <Control
+          TM={TM}
           program={program} 
           updateTM={this.updateTM} 
-          updateProgram={this.updateProgram} 
         />
         <Editor 
           TM={TM}

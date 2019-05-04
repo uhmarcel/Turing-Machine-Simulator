@@ -56,7 +56,6 @@ class Program {
                 }
             }
         }) 
-        console.log(this.toString());
     }
 
     clear() {

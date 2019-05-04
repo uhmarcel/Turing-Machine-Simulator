@@ -23,8 +23,18 @@ const outputText = {
 class Display extends Component {
     
     state = {
-        displayValue: 'lol'
+        displayValue: this.props.TM.toString(),
+        focus: false
     }
+
+    componentDidUpdate() {
+        const {TM} = this.props;
+        const {displayValue, focus} = this.state;
+        if (displayValue !== TM.toString() && !focus) {
+            this.setState({displayValue: TM.toString()});
+        }
+    }
+    
 
     updateInput = async (e) => {
         this.setState({displayValue: e.target.value});
@@ -32,13 +42,24 @@ class Display extends Component {
 
     processInput = async (e) => {
         const {TM, updateTM} = this.props;
-        TM.setInput(e.target.value);
-        await updateTM();
-        this.setState({displayValue: TM.toString()});
+        const input = e.target.value;
+        const r = /.*(?:\[|\])/g;
+        if (!r.test(input)) {
+            TM.setInput(input);
+            await updateTM();
+        }
+        this.setFocusOff();
+    }
+
+    setFocusOn = () => {
+        this.setState({focus: true});
+    }
+
+    setFocusOff = () => {
+        this.setState({focus: false});
     }
 
     render() {
-        const {TM} = this.props;
         const {displayValue} = this.state;
         return (
             <Container fluid style={styles} className='d-flex align-items-center' >
@@ -51,6 +72,7 @@ class Display extends Component {
                         className='w-100 mt-0' 
                         style={displayArea} 
                         value={displayValue}
+                        onFocus={this.setFocusOn}
                         onChange={this.updateInput}
                         onBlur={this.processInput}
                     />
