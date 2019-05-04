@@ -76,7 +76,7 @@ class TuringMachine {
             else 
                 output += this.tape[i];
         }
-        return output + '  <q' + this.state + '>';
+        return output; // + '  <q' + this.state + '>';
     }
 
 }
