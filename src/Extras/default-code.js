@@ -17,4 +17,4 @@ q7]l (X/1, q3)            # Remove mark and recover
 
 # All multiplicands processed, finish 
 q8]l (Y/1, q8) (#, q9)
-q9]r (#, q-1)`
+q9]r (#, qh)`

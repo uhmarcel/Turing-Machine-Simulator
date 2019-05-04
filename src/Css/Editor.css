@@ -7,5 +7,10 @@
     height: calc(100vh - 90px)
 }
 
+.EditorMsg {
+    display: inline-block;
+    margin-top: 5px;
+}
+
 /* 12px Consolas */
 

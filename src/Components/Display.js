@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
+
 import '../Css/Display.css';
-
-
 
 
 class Display extends Component {
@@ -66,7 +65,7 @@ class Display extends Component {
                             <InputGroupText style={{border:'none'}}>{'q' + TM.getState()}</InputGroupText>
                         </InputGroupAddon>  
                     </InputGroup>
-                    <span className='OutputText'>Output: 11101</span>
+                    <span className='OutputText'>{'Output: ' + TM.getOutput()}</span>
                 </div>
             </Container>
         );

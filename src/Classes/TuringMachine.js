@@ -53,18 +53,18 @@ class TuringMachine {
     }
 
     getOutput() {
-        let output = "";
-        for (let i=this.position; i<this.tape.length; i++) {
-            let char = this.tape[i];
-            if (char !== '#') {
-                output += char;
-            }
-        }
+        if (!this.isDone())
+            return '';
+        let output = '';
+        for (let i = this.position + 1; i < this.tape.length - 1; i++) 
+            output += this.tape[i];
+        if (output === '') 
+            return '\u03BB';
         return output;
     }
 
     isDone() {
-        return this.state === '-1';
+        return this.state === 'h';
     }
 
     toString() {

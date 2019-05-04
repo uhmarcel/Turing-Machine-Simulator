@@ -63,7 +63,7 @@ class Control extends Component {
         const playIcon = this.getPlayIcon();
         return (
             <div className='container-fluid ControlPanel'>
-                <span>Editor</span>
+                <div className='EditorMsg'>Editor</div>
                 <div className='float-right'>
                     <Button color='light' className='ControlButton' onClick={this.simulationReset}><FontAwesomeIcon icon={faUndoAlt}/></Button>{'  '}
                     <Button color='light' className='ControlButton'><FontAwesomeIcon icon={faArrowLeft}/></Button>{'  '}

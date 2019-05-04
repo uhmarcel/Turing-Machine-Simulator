@@ -28,6 +28,7 @@ class App extends Component {
   updateProgram = async () => {
     const {program} = this.state;
     this.setState({program});
+    console.log(program.toString());
   }
 
   render() {

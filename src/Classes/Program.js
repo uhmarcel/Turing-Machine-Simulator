@@ -25,16 +25,16 @@ class Program {
     loadCode(code) {
         let lines = code.split(/\r?\n/);
         
-        let fastNotation, subNotationG,subNotation, shortcut;
-        fastNotation = /^q([0-9]+)\]([lr])(\(.\/.,q-?[0-9]+\))*(#.*)?$/;
-        subNotationG = /\((.)\/(.),q(-?[0-9]+)\)/g; // (n/m,q)
-        subNotation = /\((.)\/(.),q(-?[0-9]+)\)/; // (n/m,q)
+        let fastNotation, subNotationG,subNotation;
+        fastNotation = /^q([0-9]+)\]([lr])(\(.\/.,q(?:h|[0-9]+)\))*(#.*)?$/;
+        subNotationG = /\((.)\/(.),q((?:h|[0-9]+))\)/g; // (n/m,q)
+        subNotation = /\((.)\/(.),q((?:h|[0-9]+))\)/; // (n/m,q)
 
         this.clear();
 
         lines.forEach( (line) => {
             line = line.replace(/\s+/g, '');
-            line = line.replace(/\((.),q(-?[0-9]+)\)/g, "($1/$1,q$2)");
+            line = line.replace(/\((.),q((?:h|[0-9]+))\)/g, "($1/$1,q$2)");
 
             let groups = line.match(fastNotation);
             if (groups != null) {

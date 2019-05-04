@@ -6,11 +6,11 @@ CodeMirror.defineSimpleMode("tm-custom", {
     start: [
       {
         regex: /^(q[0-9]+])\s*([rl])/, 
-        token: ["tag   ", "atom  "]
+        token: ["tag", "atom"]
       },
       {
-        regex: /\(\s*(?:.\s*\/\s*.\s*|.\s*),\s*(q-?[0-9]+)\s*\)/,
-        token: ["attribute  "]
+        regex: /\(\s*(?:.\s*\/\s*.\s*|.\s*),\s*(q(?:h|[0-9]+))\s*\)/,
+        token: ["attribute"]
       },
       {
         regex: /#.*/, 
