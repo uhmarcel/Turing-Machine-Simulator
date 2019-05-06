@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Turing-Machine-Simulator/precache-manifest.6f35deff206da79ff7d48cd0b5fbb6a4.js"
+  "/Turing-Machine-Simulator/precache-manifest.904c740fcd888e3a7bbbc7633a3e5ce6.js"
 );
 
 self.addEventListener('message', (event) => {
