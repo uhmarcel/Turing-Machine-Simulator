@@ -21,7 +21,8 @@ q9]r (#, qh)`
 
 export const binaryAddition =
 `# Binary addition TM program
-# Outputs the addition of all input binary numbers of the same length.
+# Outputs the addition of a set of binary numbers.
+# Accepts multiple binary numbers of any length.
 
 # Mark start of tape
 q0]r (1, q1) (0, q1) 
@@ -34,17 +35,18 @@ q4]l (#/E, q5)
 q5]l (S, q6)
 
 # Make enough space for output
-q6]r (1/X, q7) (0/Y, q7) (#/C, q10) (E/#, q14) 
+q6]r (1/X, q7) (0/Y, q7) (#/C, q10) (E/#, q13) 
 	q7]r (E, q8)
-	q8]r (#/A, q9) (0/A, q9)
+	q8]r (#/0, q9) (A/0, q9)
 	q9]l (X/1, q6) (Y/0, q6)
 
 	q10]r (E, q11)
-	q11]r (A/0, q11) (#/0, q12)
+	q11]r (0/A, q11) (#/A, q12)
     q12]l (C/#, q6) 
 
 # Set new marks for current input and end of tape
-q14]r (A/0, q14) (#/E, q15)
+q13]r (A/0, q13) (#/0,q14)
+q14]r (#/E, q15)
 q15]l (S/#, q16)
 q16]r (#/C, q17)
 

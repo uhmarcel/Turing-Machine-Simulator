@@ -14,6 +14,7 @@ class TuringMachine {
         this.tape = ['#'];
         this.position = 0;
         this.state = 0;
+        this.previous = [];
     }
 
     setInput(input) {
