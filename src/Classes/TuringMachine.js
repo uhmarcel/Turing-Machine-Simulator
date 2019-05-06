@@ -28,6 +28,7 @@ class TuringMachine {
         if (this.isDone()) {
             return;
         }
+        
         if (this.position === this.tape.length - 1) 
             this.tape.push('#');
         
@@ -49,6 +50,8 @@ class TuringMachine {
         this.tape[this.position] = r;
         this.state = n;
 
+        this.formatTape();
+        
         return this.toString();
     }
 
@@ -66,6 +69,12 @@ class TuringMachine {
     isDone() {
         return this.state === 'h';
     }
+    
+    formatTape() {
+        while (this.tape.length > 2 && this.position < this.tape.length - 1 && this.tape[this.tape.length - 2] === '#') {
+            this.tape.pop();
+        }
+    }
 
     toString() {
         let output = "";
@@ -75,7 +84,7 @@ class TuringMachine {
             else 
                 output += this.tape[i];
         }
-        return output; // + '  <q' + this.state + '>';
+        return output;
     }
 
     getState() {

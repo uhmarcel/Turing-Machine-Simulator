@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Controlled as CodeMirror} from 'react-codemirror2';
-import { defaultCode } from '../Extras/default-code'
+import { binaryAddition } from '../Extras/example-programs'
 
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/xq-light.css';
@@ -11,7 +11,7 @@ import '../Css/Editor.css';
 class Editor extends Component {
 
     state = {
-        code: defaultCode
+        code: binaryAddition
     }
 
     componentDidMount() {

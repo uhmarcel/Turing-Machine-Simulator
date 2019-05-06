@@ -40,7 +40,7 @@ class Program {
             if (groups != null) {
                 let s, d, t, r, n;
                 s = groups[1];
-                d = groups[2] == 'r' ? true : false;
+                d = groups[2] === 'r' ? true : false;
 
                 let terms = line.match(subNotationG);
                 if (terms != null) {

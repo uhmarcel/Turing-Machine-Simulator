@@ -16,7 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     const {TM} = this.state;
-    TM.setInput('111#11');
+    TM.setInput('1#101#10');
     this.updateTM();
   }
 
@@ -28,7 +28,6 @@ class App extends Component {
   updateProgram = async () => {
     const {program} = this.state;
     this.setState({program});
-    console.log(program.toString());
   }
 
   render() {
