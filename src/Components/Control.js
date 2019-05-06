@@ -20,7 +20,9 @@ class Control extends Component {
     }
 
     simulationBack = async () => {
-        console.log('Not yet implemented');
+        const {TM, updateTM} = this.props;
+        TM.stepBack();
+        updateTM();
     }
 
     simulationStep = async () => {
@@ -66,7 +68,7 @@ class Control extends Component {
                 <div className='EditorMsg'>Editor</div>
                 <div className='float-right'>
                     <Button color='light' className='ControlButton' onClick={this.simulationReset}><FontAwesomeIcon icon={faUndoAlt}/></Button>{'  '}
-                    <Button color='light' className='ControlButton'><FontAwesomeIcon icon={faArrowLeft}/></Button>{'  '}
+                    <Button color='light' className='ControlButton' onClick={this.simulationBack}><FontAwesomeIcon icon={faArrowLeft}/></Button>{'  '}
                     <Button color='light' className='ControlButton' onClick={this.simulationStep}><FontAwesomeIcon icon={faArrowRight}/></Button>{'  '}
                     <Button color='light' className='ControlButton' onClick={this.simulationPlay} style={this.getPlayStyle()}><FontAwesomeIcon icon={playIcon} style={{height: '15px'}}/></Button>{'  '}
                     <Button color='light' className='ControlButton' onClick={this.simulationFastforward}><FontAwesomeIcon icon={faFastForward}/></Button>    

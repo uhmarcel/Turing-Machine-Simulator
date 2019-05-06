@@ -2,10 +2,12 @@
 class TuringMachine {
 
     constructor() {
+        this.input = '';
         this.tape = ['#'];
         this.position = 0;
         this.state = 0;
-        this.input = null;
+        this.previous = []
+        
     }
 
     resetTape() {
@@ -28,6 +30,7 @@ class TuringMachine {
         if (this.isDone()) {
             return;
         }
+        this.pushState();
         
         if (this.position === this.tape.length - 1) 
             this.tape.push('#');
@@ -55,6 +58,24 @@ class TuringMachine {
         return this.toString();
     }
 
+    stepBack() {
+        if (this.previous.length !== 0) {
+            let {tape, position, state} = this.previous.pop();
+            this.tape = [...tape];
+            this.position = position;
+            this.state = state;
+        }
+    }
+
+    pushState() {
+        let current = {
+            tape: [...this.tape],
+            position: this.position,
+            state: this.state    
+        }
+        this.previous.push(current);
+    }
+
     getOutput() {
         if (!this.isDone())
             return '';
@@ -69,7 +90,7 @@ class TuringMachine {
     isDone() {
         return this.state === 'h';
     }
-    
+
     formatTape() {
         while (this.tape.length > 2 && this.position < this.tape.length - 1 && this.tape[this.tape.length - 2] === '#') {
             this.tape.pop();
