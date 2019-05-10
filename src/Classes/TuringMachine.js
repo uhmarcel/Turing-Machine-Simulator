@@ -46,6 +46,7 @@ class TuringMachine {
         s = this.state
         d = program.indexedMap[s].direction;
         this.position += d ?  1 : -1;
+        if (this.position < 0) return;
         t = this.tape[this.position];
 
         if (program.indexedMap[s].targets[t] != null) {
@@ -84,8 +85,9 @@ class TuringMachine {
     }
 
     getOutput() {
-        if (!this.isDone())
-            return '';
+        if (!this.isDone())  return '';
+        if (this.isNonEnding())  return 'undefined';
+
         let output = '';
         for (let i = this.position + 1; i < this.tape.length - 1; i++) 
             output += this.tape[i];
@@ -95,7 +97,11 @@ class TuringMachine {
     }
 
     isDone() {
-        return this.state === 'h';
+        return  (this.state === 'h') || this.isNonEnding();
+    }
+
+    isNonEnding() {
+        return (this.position > 512) || (this.position < 0)
     }
 
     formatTape() {

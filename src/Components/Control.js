@@ -14,6 +14,7 @@ class Control extends Component {
 
     simulationReset = async () => {
         const {TM, updateTM} = this.props;
+        this.stopSimulation();
         TM.resetTape();
         TM.setInput(TM.input);
         updateTM();
@@ -21,6 +22,7 @@ class Control extends Component {
 
     simulationBack = async () => {
         const {TM, updateTM} = this.props;
+        this.stopSimulation();
         TM.stepBack();
         updateTM();
     }
@@ -45,10 +47,19 @@ class Control extends Component {
 
     simulationFastforward = async () => {
         const {TM, program, updateTM} = this.props;
+        this.stopSimulation();
         while (!TM.isDone()) {
             TM.step(program);
         }
         updateTM();
+    }
+
+    stopSimulation = async () => {
+        const {play} = this.state;
+        if (play !== null) {
+            clearInterval(play);
+            this.setState({play: null});
+        }
     }
 
     getPlayIcon = () => {

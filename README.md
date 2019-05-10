@@ -7,5 +7,5 @@ You can access the simulator at https://uhmarcel.github.io/Turing-Machine-Simula
 ### To do
 - [x] Editor
 - [x] Validate input 
-- [ ] Non-ending cases
+- [x] Non-ending cases
 - [ ] Demo list
