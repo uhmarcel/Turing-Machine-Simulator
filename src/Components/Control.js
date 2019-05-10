@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUndoAlt, faArrowLeft, faArrowRight, faPlay, faPause, faFastForward } from '@fortawesome/free-solid-svg-icons';
+import { faUndoAlt, faArrowLeft, faArrowRight, faPlay, faPause, faFastForward, faCaretDown} from '@fortawesome/free-solid-svg-icons';
 
 import '../Css/Control.css';
 
@@ -65,7 +65,7 @@ class Control extends Component {
         const playIcon = this.getPlayIcon();
         return (
             <div className='container-fluid ControlPanel'>
-                <div className='EditorMsg'>Editor</div>
+                <div className='float-left EditorMsg'>Editor</div><Button color='none' className='float-left ControlButton'><FontAwesomeIcon icon={faCaretDown}/></Button>{'  '}
                 <div className='float-right'>
                     <Button color='light' className='ControlButton' onClick={this.simulationReset}><FontAwesomeIcon icon={faUndoAlt}/></Button>{'  '}
                     <Button color='light' className='ControlButton' onClick={this.simulationBack}><FontAwesomeIcon icon={faArrowLeft}/></Button>{'  '}

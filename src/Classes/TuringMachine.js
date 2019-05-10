@@ -20,7 +20,13 @@ class TuringMachine {
     setInput(input) {
         this.resetTape();
         let index = this.position;
+        
+        while (input[0] === '#') 
+            input = input.substring(1);
+        while (input[input.length-1] === '#') 
+            input = input.substring(0,input.length-1);
         this.input = input;
+        
         for (let i=0; i<input.length; i++) {
             this.tape[index + i + 1] = input.charAt(i);
         }

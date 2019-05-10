@@ -6,6 +6,6 @@ You can access the simulator at https://uhmarcel.github.io/Turing-Machine-Simula
 
 ### To do
 - [x] Editor
-- [ ] Validate input 
+- [x] Validate input 
 - [ ] Non-ending cases
 - [ ] Demo list
