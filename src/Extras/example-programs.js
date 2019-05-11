@@ -100,3 +100,27 @@ q4]r (#, q5)
 q5]r (#/0, q6)
 q6]l (X/1, q1) (Y/0, q1)
 q7]r (#, qh)`
+
+
+export const samplePrograms = [
+    {
+        "name": "Arithmetic Multiply",
+        "sampleInput": "1111#11",
+        "code": arithMultiply
+    },
+    {
+        "name": "Binary Addition",
+        "sampleInput": "11101#10110",
+        "code": binaryAddition
+    },
+    {
+        "name": "Copy Paste",
+        "sampleInput": "10110",
+        "code": copyPaste
+    },
+    {
+        "name": "Reverse",
+        "sampleInput": "11001",
+        "code": reverse
+    }
+]

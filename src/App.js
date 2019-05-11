@@ -4,20 +4,20 @@ import Control from './Components/Control';
 import Editor from './Components/Editor';
 import './Css/App.css'
 
-import Program from './Classes/Program';
 import TuringMachine from './Classes/TuringMachine';
+import Program from './Classes/Program';
+import { binaryAddition } from './Extras/example-programs';
 
 class App extends Component {
 
   state = {
     TM: new TuringMachine(),
-    program: new Program()
+    program: new Program(),
+    defaultCode: ''
   }
 
   componentDidMount() {
-    const {TM} = this.state;
-    TM.setInput('1#101#10');
-    this.updateTM();
+    this.setDefaultCode(binaryAddition, '11011#10110');
   }
 
   updateTM = async () => {
@@ -30,8 +30,15 @@ class App extends Component {
     this.setState({program});
   }
 
+  setDefaultCode = (code, input) => {
+    const {TM} = this.state; 
+    TM.setInput(input);
+    this.setState({defaultCode: code});
+    this.updateTM();
+  }
+
   render() {
-    const {TM, program} = this.state;
+    const {TM, program, defaultCode} = this.state;
     return (
       <div className='App'>
         <Display 
@@ -42,8 +49,11 @@ class App extends Component {
           TM={TM}
           program={program} 
           updateTM={this.updateTM} 
+          updateProgram={this.updateProgram} 
+          onProgramSelection={this.setDefaultCode}
         />
         <Editor 
+          defaultCode={defaultCode}
           TM={TM}
           program={program} 
           updateTM={this.updateTM} 

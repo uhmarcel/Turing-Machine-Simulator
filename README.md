@@ -8,4 +8,4 @@ You can access the simulator at https://uhmarcel.github.io/Turing-Machine-Simula
 - [x] Editor
 - [x] Validate input 
 - [x] Non-ending cases
-- [ ] Demo list
+- [x] Demo list
