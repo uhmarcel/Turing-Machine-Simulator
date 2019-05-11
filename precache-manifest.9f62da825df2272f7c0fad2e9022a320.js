@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a65b6862b74e0096d075d36c8346eb49",
+    "revision": "fc99829d7f749a1635e42f6bf1054aed",
     "url": "/Turing-Machine-Simulator/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Turing-Machine-Simulator/static/css/2.be33ed0a.chunk.css"
   },
   {
-    "revision": "d0584655042dee04e82d",
+    "revision": "7ee51e8be11820035be8",
     "url": "/Turing-Machine-Simulator/static/css/main.6ac3efd0.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Turing-Machine-Simulator/static/js/2.1765e182.chunk.js"
   },
   {
-    "revision": "d0584655042dee04e82d",
-    "url": "/Turing-Machine-Simulator/static/js/main.7fd9e324.chunk.js"
+    "revision": "7ee51e8be11820035be8",
+    "url": "/Turing-Machine-Simulator/static/js/main.8697215c.chunk.js"
   },
   {
     "revision": "aaa2e32b52fbf3902537",
