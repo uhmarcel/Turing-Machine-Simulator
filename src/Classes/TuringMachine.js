@@ -111,7 +111,11 @@ class TuringMachine {
 
     toString() {
         let output = "";
+        let leadingEmpty = true;
         for (let i=0; i<this.tape.length; i++) {
+            if (leadingEmpty && this.tape[i] === '#' && this.tape[i+1] === '#' && i !== this.position)
+                continue;
+            leadingEmpty = false;
             if (i === this.position) 
                 output += '[' + this.tape[i] + ']';
             else 

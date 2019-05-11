@@ -114,6 +114,28 @@ q3]r (#/0, q4)
 q4]l (#, q5)
 q5]r (0/1, q2)`
 
+export const decimalSum = 
+`# Decimal Addition TM program
+# Outputs the sum of two decimal numbers
+
+# Decrease first operand by one
+q0]r (#, q1)
+q1]l (0/9, q1) (1/0, q2) (2/1, q2) (3/2, q2) (4/3, q2) (5/4, q2) (6/5, q2) (7/6, q2) (8/7, q2) (9/8, q2) (#, q9)
+q2]r (#, q3)
+
+# Increase second operand by one
+q3]r (#, q4)
+q4]l (0/1, q5) (1/2, q5) (2/3, q5) (3/4, q5) (4/5, q5) (5/6, q5) (6/7, q5) (7/8, q5) (8/9, q5) (9/0, q4) (#, q6)
+q5]l (#, q1) 
+
+	# Carry over
+	q6]r (#/0, q7)
+	q7]l (#, q8)
+	q8]r (0/1, q5)
+
+# Clean and finish
+q9]r (9/#, q9) (#, qh)`
+
 
 export const samplePrograms = [
     {
@@ -137,8 +159,13 @@ export const samplePrograms = [
         "code": reverse
     },
     {
-        "name": "Successor",
+        "name": "Decimal Successor",
         "sampleInput": "2019",
         "code": successor
+    },
+    {
+        "name": "Decimal Addition",
+        "sampleInput": "12#4",
+        "code": decimalSum
     }
 ]
