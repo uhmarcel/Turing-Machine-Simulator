@@ -101,6 +101,19 @@ q5]r (#/0, q6)
 q6]l (X/1, q1) (Y/0, q1)
 q7]r (#, qh)`
 
+export const successor = 
+`# Successor TM program
+# Outputs the successor of an input decimal number
+
+q0]r (#, q1)
+q1]l (0/1, q2) (1/2, q2) (2/3, q2) (3/4, q2) (4/5, q2) (5/6, q2) (6/7, q2) (7/8, q2) (8/9, q2) (9/0, q1) (#, q3)
+q2]l (#, qh)
+
+# Make space for carry
+q3]r (#/0, q4)
+q4]l (#, q5)
+q5]r (0/1, q2)`
+
 
 export const samplePrograms = [
     {
@@ -122,5 +135,10 @@ export const samplePrograms = [
         "name": "Reverse",
         "sampleInput": "11001",
         "code": reverse
+    },
+    {
+        "name": "Successor",
+        "sampleInput": "2019",
+        "code": successor
     }
 ]
