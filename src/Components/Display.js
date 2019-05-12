@@ -7,6 +7,7 @@ import '../Css/Display.css';
 class Display extends Component {
     
     state = {
+        savedValue: this.props.TM.toString(),
         displayValue: this.props.TM.toString(),
         focus: false
     }
@@ -36,11 +37,21 @@ class Display extends Component {
     }
 
     setFocusOn = () => {
-        this.setState({focus: true});
+        const {displayValue} = this.state;
+        this.setState({
+            focus: true,
+            displayValue: '',
+            savedValue: displayValue
+        });
+
     }
 
     setFocusOff = () => {
-        this.setState({focus: false});
+        const {savedValue} = this.state;
+        this.setState({
+            focus: false,
+            displayValue: savedValue
+        });
     }
 
     render() {
@@ -60,9 +71,12 @@ class Display extends Component {
                             onFocus={this.setFocusOn}
                             onChange={this.updateInput}
                             onBlur={this.processInput}
+                            placeholder='Enter input'
                         />
                         <InputGroupAddon addonType="append">
-                            <InputGroupText style={{border:'none'}}>{'q' + TM.getState()}</InputGroupText>
+                            <InputGroupText style={{border:'none'}}>
+                                {'q' + TM.getState()}
+                            </InputGroupText>
                         </InputGroupAddon>  
                     </InputGroup>
                     <span className='OutputText'>{'Output: ' + TM.getOutput()}</span>

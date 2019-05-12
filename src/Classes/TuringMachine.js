@@ -7,13 +7,15 @@ class TuringMachine {
         this.position = 0;
         this.state = 0;
         this.previous = []        
+        this.done = false;
     }
 
     resetTape() {
         this.tape = ['#'];
         this.position = 0;
         this.state = 0;
-        this.previous = [];
+        this.previous = [];       
+        this.done = false;
     }
 
     setInput(input) {
@@ -43,6 +45,10 @@ class TuringMachine {
         
         let s, d, t, r, n;
         s = this.state
+        if (!program.indexedMap[s]) {
+            this.done = true;
+            return;
+        }
         d = program.indexedMap[s].direction;
         this.position += d ?  1 : -1;
         if (this.position < 0) return;
@@ -67,10 +73,11 @@ class TuringMachine {
 
     stepBack() {
         if (this.previous.length !== 0) {
-            let {tape, position, state} = this.previous.pop();
+            let {tape, position, state, done} = this.previous.pop();
             this.tape = [...tape];
             this.position = position;
             this.state = state;
+            this.done = done;
         }
     }
 
@@ -78,7 +85,8 @@ class TuringMachine {
         let current = {
             tape: [...this.tape],
             position: this.position,
-            state: this.state    
+            state: this.state,
+            done: this.done
         }
         this.previous.push(current);
     }
@@ -96,7 +104,7 @@ class TuringMachine {
     }
 
     isDone() {
-        return  (this.state === 'h') || this.isNonEnding();
+        return  (this.state === 'h') || this.done || this.isNonEnding();
     }
 
     isNonEnding() {
@@ -113,7 +121,7 @@ class TuringMachine {
         let output = "";
         let leadingEmpty = true;
         for (let i=0; i<this.tape.length; i++) {
-            if (leadingEmpty && this.tape[i] === '#' && this.tape[i+1] === '#' && i !== this.position)
+            if (leadingEmpty && this.tape[i+1] === '#' && i !== this.position && this.tape.length > 2)
                 continue;
             leadingEmpty = false;
             if (i === this.position) 
