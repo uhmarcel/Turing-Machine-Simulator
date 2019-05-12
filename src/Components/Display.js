@@ -29,7 +29,7 @@ class Display extends Component {
         const {TM, updateTM} = this.props;
         const input = e.target.value;
         const r = /.*(?:\[|\])/g;
-        if (!r.test(input)) {
+        if (input.length>0 && !r.test(input)) {
             TM.setInput(input);
             await updateTM();
         }
