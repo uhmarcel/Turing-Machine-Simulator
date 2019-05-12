@@ -165,7 +165,7 @@ export const samplePrograms = [
     },
     {
         "name": "Decimal Addition",
-        "sampleInput": "12#4",
+        "sampleInput": "16#8",
         "code": decimalSum
     }
 ]
