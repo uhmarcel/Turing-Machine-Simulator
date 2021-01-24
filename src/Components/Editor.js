@@ -3,7 +3,7 @@ import { Controlled as CodeMirror} from 'react-codemirror2';
 
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/xq-light.css';
-import '../Custom-mode/TM-custom.js';
+import '../Custom-mode/tm-custom.js';
 import '../Css/Editor.css';
 
 
